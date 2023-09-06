@@ -23,7 +23,7 @@ def callback(ch, method, properties, body):
     time.sleep(body.count(b'.'))
 
     print("[x] done")
-
+    ch.basic_ack(delivery_tag = method.delivery_tag) #Sends Acknowledge task - Task received and processed
 
 
 
